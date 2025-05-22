@@ -70,6 +70,8 @@ sn5.setLname("Dhoni");
     for(Student rs:list) {
     	System.out.println("id:" + rs.getStdId() +"std fname   "+ rs.getStdName().getfName() +"  std lname "+rs.getStdName().getLname() + " std Marks"+ rs.getMarks());
     }
+    Query q1 = em.createQuery("delete from  resultTable ");
+    q1.executeUpdate();
     
    et.commit();
    
