@@ -19,19 +19,28 @@ public class App {
 //   StudentName sn1 = new StudentName();
 //   sn1.setfName("Rohith ");
 //   sn1.setLname("kumar");
-   Student s1 = new Student();
+//   Student s1 = new Student();
 //   s1.setStdId(1);
 //   s1.setStdName(sn1);
 //   s1.setMarks(92);
 //   
 //   
-//   StudentName sn2 = new StudentName();
-//   sn2.setfName("Rohith ");
-//   sn2.setLname("Sharma");
-//   Student s2 = new Student();
-//   s2.setStdId(2);
-//   s2.setStdName(sn2);
-//   s2.setMarks(94);
+   StudentName sn2 = new StudentName();
+   sn2.setfName("Rohith ");
+   sn2.setLname("Sharma");
+   Student s2 = new Student();
+   s2.setStdId(2);
+   s2.setStdName(sn2);
+   s2.setMarks(94);
+   
+    UsnDet usn = new UsnDet();
+    usn.setUsn("1MS19IS001");
+   
+    usn.setBranch("ISE");
+    usn.setS1(s2);
+    
+   em.persist(usn);
+   em.persist(s2);
 //   
 //   StudentName sn3 = new StudentName();
 //   sn3.setfName("virat ");
@@ -56,22 +65,22 @@ public class App {
    
    
    
- StudentName sn5 = new StudentName();
- sn5.setfName("ms");
-sn5.setLname("Dhoni");
-   Student su2 =em.find(Student.class, 1);
-   su2.setStdName(sn5);
-   
-   em.persist(su2);
-   
+// StudentName sn5 = new StudentName();
+// sn5.setfName("ms");
+//sn5.setLname("Dhoni");
+//   Student su2 =em.find(Student.class, 1);
+//   su2.setStdName(sn5);
+//   
+//   em.persist(su2);
+//   
    
    Query q = em.createQuery("select rs from resultTable rs");
     java.util.List<Student> list = q.getResultList();
     for(Student rs:list) {
     	System.out.println("id:" + rs.getStdId() +"std fname   "+ rs.getStdName().getfName() +"  std lname "+rs.getStdName().getLname() + " std Marks"+ rs.getMarks());
     }
-    Query q1 = em.createQuery("delete from  resultTable ");
-    q1.executeUpdate();
+//    Query q1 = em.createQuery("delete from  resultTable ");
+//    q1.executeUpdate();
     
    et.commit();
    
