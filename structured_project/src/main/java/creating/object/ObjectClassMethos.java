@@ -43,7 +43,15 @@ public class ObjectClassMethos {
 		et.commit();
 	}
 	public static void fetchDetails(String id) {
-		Flower flower =em.find(Flower.class, "1ac34ad");
+		Flower flower =em.find(Flower.class, id);
 		System.out.println("Flower Name: " + flower.getFlowerName() + "FlowerId" + flower.getId() + "Flower Color: " + flower.getFlowerColor() + "Price: " + flower.getPrice());
 	}
+	public static void deleteFlower(String id) {
+		Flower flower = em.find(Flower.class, id);
+		et.begin();
+		em.remove(flower);
+		et.commit();
+		
+	}
+	
 }

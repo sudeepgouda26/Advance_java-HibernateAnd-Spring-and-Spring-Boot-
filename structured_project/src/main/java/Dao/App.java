@@ -34,6 +34,8 @@ public class App {
 	ObjectClassMethos.UpdateFlower("1ac34ad", "Rose", "Red", 15);
 		ObjectClassMethos.fetchDetails("1ac34ad");
 		
+		ObjectClassMethos.deleteFlower("1ac35ad");
+		
 		//em.close();
 		//emf.close();
 	}
