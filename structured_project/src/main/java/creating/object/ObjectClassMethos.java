@@ -42,4 +42,8 @@ public class ObjectClassMethos {
 		em.merge(flower);
 		et.commit();
 	}
+	public static void fetchDetails(String id) {
+		Flower flower =em.find(Flower.class, "1ac34ad");
+		System.out.println("Flower Name: " + flower.getFlowerName() + "FlowerId" + flower.getId() + "Flower Color: " + flower.getFlowerColor() + "Price: " + flower.getPrice());
+	}
 }
